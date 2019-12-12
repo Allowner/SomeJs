@@ -1,0 +1,40 @@
+.footerStyle {
+  height: 100px;
+  text-align: center;
+  color: "#F65261";
+  background-color: "#555555";
+}
+
+.logoMargin {
+  margin-left: 20px;
+  color: "#F65261";
+}
+
+.searchDiv {
+  width: 82%;
+  height: 35%;
+}
+
+.searchInput {
+  width: 60%;
+  height: 30px;
+  background: "#424242";
+  padding-right: 10px;
+}
+
+.searchButton {
+  width: 20%;
+  height: 30px;
+}
+
+.spanPadding {
+  padding-right: 10px;
+}
+
+.buttonSelected {
+  background: "#F65261";
+}
+
+.simpleButton {
+  background: "#424242";
+}
