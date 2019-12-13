@@ -6,11 +6,18 @@ import Similar from './components/similar';
 import { Route, Switch } from "react-router-dom";
 
 let urls = [
-  "../public/poster.jpg"
+  "poster.jpg",
+  "poster.jpg",
+  "poster.jpg",
+  "poster.jpg",
+  "poster.jpg",
+  "poster.jpg",
+  "poster.jpg",
+  "poster.jpg"
 ];
 
 const Header = () => (
-  <main>
+  <main className="baseHeader">
     <Switch>
       <Route exact path="/" component={Search} />
       <Route path="/film/:id" component={Film} />
@@ -19,7 +26,7 @@ const Header = () => (
 );
 
 const Main = (props) => (
-  <main>
+  <main className="baseMain">
     <Switch>
       <Route exact path="/" render={() => <Result imageUrls={props.imageUrls} />} />
       <Route path="/film/:id" component={Similar} />
@@ -37,8 +44,7 @@ const Footer = () => (
 
 function App() {
   return (
-    <div>
-      <basefont face="arial, verdana, sans-serif" color="#ffffff"></basefont>
+    <div className="baseStyle">
       <Header />
       <Main imageUrls={urls} />
       <Footer />

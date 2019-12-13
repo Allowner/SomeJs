@@ -4,17 +4,17 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <p class="logoMargin">
+        <span className="logoMargin">
           <b>netflix</b>roulet
-        </p>
-        <div class="searchDiv">
+        </span>
+        <div className="searchDiv">
           <h2>FIND YOUR MOVIE</h2>
-          <input class="searchInput" type="text" />
-          <button class="searchButton">SEARCH</button>
+          <input className="searchInput" type="text" />
+          <button className="searchButton">SEARCH</button>
           <br />
-          <span class="spanPadding">SEARCH BY</span>
-          <button class="buttonSelected">TITLE</button>
-          <button class="simpleButton">GENRE</button>
+          <span className="spanPadding">SEARCH BY</span>
+          <button className="buttonSelected">TITLE</button>
+          <button className="simpleButton">GENRE</button>
         </div>
       </div>
     );
