@@ -1,0 +1,10 @@
+.baseStyle {
+  color: #ffffff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
+}
+
+.baseHeader {
+  background: black;
+  padding-top: 1%;
+}

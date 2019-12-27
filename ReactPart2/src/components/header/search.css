@@ -1,0 +1,49 @@
+.logoMargin {
+  margin-left: 5%;
+  font-size: 1.5em;
+  color: #f65261;
+}
+
+.searchDiv {
+  width: 70%;
+  height: 35%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3%;
+}
+
+.searchInput {
+  width: 73%;
+  height: 50px;
+  background: #424242;
+  padding-right: 2%;
+  border: none;
+}
+
+.searchButton {
+  width: 25%;
+  height: 50px;
+  margin-bottom: 3px;
+  margin-left: 2%;
+}
+
+.spanPadding {
+  padding-right: 2%;
+}
+
+.buttonSelected {
+  background: #f65261;
+}
+
+.simpleButton {
+  background: #424242;
+}
+
+.searchHeader {
+  font-size: 2em;
+  padding-top: 5%;
+}
+
+.searchInput {
+  border-radius: 5px;
+}

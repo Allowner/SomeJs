@@ -1,0 +1,11 @@
+.divStyle {
+  text-align: center;
+  background: black;
+  vertical-align: middle;
+  height: 800px;
+  line-height: 800px;
+}
+
+.notFoundStyle {
+  font-size: 4em;
+}

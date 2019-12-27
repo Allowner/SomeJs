@@ -1,0 +1,47 @@
+.buttonImage {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  background-image: url("../../icon1.png");
+  border: 0;
+  float: right;
+  margin-right: 3%;
+}
+
+.mainMargin {
+  margin-left: 10%;
+  margin-top: 2%;
+  height: 430px;
+}
+
+.imgDiv {
+  float: left;
+  width: 280px;
+}
+
+.textDiv {
+  float: left;
+  margin-top: 2%;
+  margin-left: 7%;
+  width: 60%;
+}
+
+.filmTitle {
+  font-size: 2em;
+}
+
+.filmVote {
+  margin-left: 4%;
+  font-size: 1.6em;
+  color: lightgreen;
+}
+
+.yearAndRuntime {
+  font-size: 1.4em;
+  color: #f65251;
+  padding-right: 10px;
+}
+
+.runtimePad {
+  padding-left: 3%;
+}

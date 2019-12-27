@@ -1,0 +1,11 @@
+.backEmpty {
+  background-color: #232323;
+  text-align: center;
+  height: 290px;
+  vertical-align: middle;
+  line-height: 290px;
+}
+
+.textStyle {
+  font-size: 1.5em;
+}
