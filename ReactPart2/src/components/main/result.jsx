@@ -28,7 +28,7 @@ class Result extends Component {
 
     return (
       <div>
-        <MiddleLine amount={data.length} />
+        <MiddleLine amount={data !== undefined ? data.length : 0} />
         {result}
       </div>
     );

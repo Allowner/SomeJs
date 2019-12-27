@@ -87,13 +87,11 @@ class Search extends Component {
       genreClasses.add("btn-danger");
       titleClasses.remove("btn-danger");
       titleClasses.add("btn-secondary");
-      console.log("ge");
     } else {
       titleClasses.remove("btn-secondary");
       titleClasses.add("btn-danger");
       genreClasses.remove("btn-danger");
       genreClasses.add("btn-secondary");
-      console.log("ti");
     }
 
     this.setState({ filterBy: value });
