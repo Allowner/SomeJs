@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ErrorBoundary } from "./components/error/errorComponent";
+import ErrorBoundary from "./components/error/errorComponent";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducer from "./redux/reducer";
@@ -17,6 +17,6 @@ store.dispatch({
     films: { data: [] }
 });
 
-ReactDOM.render(<Provider store={store}><BrowserRouter><ErrorBoundary><App /></ErrorBoundary></BrowserRouter></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><ErrorBoundary><BrowserRouter><App /></BrowserRouter></ErrorBoundary></Provider>, document.getElementById('root'));
 
 serviceWorker.unregister();

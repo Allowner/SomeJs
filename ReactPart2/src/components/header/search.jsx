@@ -74,9 +74,14 @@ class Search extends Component {
   async onClick() {
     let url = `https://reactjs-cdp.herokuapp.com/movies?sortBy=rating&sortOrder=desc`;
     let query = `searchBy=${this.state.filterBy}&search=${this.state.searchString}`;
-    let result = await fetch(`${url}&${query}`);
-    let films = await result.json();
-    this.props.fetchFilms(films);
+    try {
+      let result = await fetch(`${url}&${query}`);
+      let films = await result.json();
+      this.props.fetchFilms(films);
+    } catch (err) {
+      console.log(err);
+      throw new Error(err);
+    }
   }
 
   onElementClick = value => {
