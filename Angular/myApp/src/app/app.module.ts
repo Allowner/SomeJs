@@ -12,13 +12,14 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { ContactsComponent } from "./components/contacts/contacts.component";
 
 const routes: Routes = [
-  {
-    path: "404",
-    component: NotFoundComponent
-  },
+  { path: "", redirectTo: "/home", pathMatch: "full" },
   {
     path: "home",
     component: MainComponent
+  },
+  {
+    path: "404",
+    component: NotFoundComponent
   },
   {
     path: "contacts",
