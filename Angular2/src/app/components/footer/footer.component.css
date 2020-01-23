@@ -1,0 +1,16 @@
+.footerStyle {
+  position: absolute;
+  bottom: 0;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.footerText {
+  margin-left: 2%;
+  float: left;
+}
+
+.footerPowered {
+  margin-right: 2%;
+  float: right;
+}

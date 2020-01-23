@@ -1,0 +1,10 @@
+.saveButton {
+  margin-top: 20px;
+  width: 100px;
+}
+
+.cancelButton {
+  margin-top: 20px;
+  float: right;
+  width: 100px;
+}
