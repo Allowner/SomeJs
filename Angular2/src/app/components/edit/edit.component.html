@@ -3,29 +3,36 @@
   <div style="text-align: center;">
     <h3>Edit</h3>
   </div>
-  <div style="width:800px; border: 4px; margin:0 auto;">
-    <div style="width: 300px; float: left;">
-      <label for="input1">Heading</label><br />
-      <input type="textbox" id="input1" style="width: 300px;" /><br />
-      <label for="input2">Short description</label><br />
-      <input type="textbox" id="input2" style="width: 300px;" /><br />
-      <label for="input3">Content</label>
-      <textarea id="input3" name="input3" rows="6" cols="39"></textarea>
+  <form (ngSubmit)="onSubmit()" #newsForm="ngForm">
+    <div style="width:800px; border: 4px; margin:0 auto;">
+      <div style="width: 300px; float: left;">
+        <label for="input1">Heading</label><br />
+        <input type="textbox" id="input1" style="width: 300px;" /><br />
+        <label for="input2">Short description</label><br />
+        <input type="textbox" id="input2" style="width: 300px;" /><br />
+        <label for="input3">Content</label>
+        <textarea id="input3" name="input3" rows="6" cols="39"></textarea>
+      </div>
+      <div style="width:300px; float: right;">
+        <label for="input4">Image</label><br />
+        <input type="textbox" id="input4" style="width: 300px;" /><br />
+        <label for="input5">Date</label><br />
+        <input type="textbox" id="input5" style="width: 300px;" /><br />
+        <label for="input6">Author</label><br />
+        <input type="textbox" id="input6" style="width: 300px;" /><br />
+        <label for="input7">Source url</label><br />
+        <input type="textbox" id="input7" style="width: 300px;" /><br />
+        <button
+          class="btn btn-primary saveButton"
+          onclick="console.log('saved')"
+        >
+          Save
+        </button>
+        <button class="btn btn-danger cancelButton" routerLink="">
+          Cancel
+        </button>
+      </div>
     </div>
-    <div style="width:300px; float: right;">
-      <label for="input4">Image</label><br />
-      <input type="textbox" id="input4" style="width: 300px;" /><br />
-      <label for="input5">Date</label><br />
-      <input type="textbox" id="input5" style="width: 300px;" /><br />
-      <label for="input6">Author</label><br />
-      <input type="textbox" id="input6" style="width: 300px;" /><br />
-      <label for="input7">Source url</label><br />
-      <input type="textbox" id="input7" style="width: 300px;" /><br />
-      <button class="btn btn-primary saveButton" onclick="console.log('saved')">
-        Save
-      </button>
-      <button class="btn btn-danger cancelButton" routerLink="">Cancel</button>
-    </div>
-  </div>
+  </form>
 </div>
 <app-footer></app-footer>

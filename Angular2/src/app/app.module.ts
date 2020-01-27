@@ -26,6 +26,7 @@ const routes: Routes = [
   },
   { path: "edit/:id", component: EditComponent },
   { path: "create", component: EditComponent },
+  { path: "article/:id", component: ArticleComponent },
   { path: "**", redirectTo: "/404" }
 ];
 

@@ -49,6 +49,9 @@
   <div *ngFor="let article of articles">
     <app-article-list-item [article]="article"></app-article-list-item>
   </div>
-  <app-load-button (onClick)="addItems($event)"></app-load-button>
+  <app-load-button
+    
+    (onClick)="addItems($event)"
+  ></app-load-button>
 </div>
 <app-footer></app-footer>

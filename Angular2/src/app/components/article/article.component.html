@@ -11,15 +11,17 @@
     <div class="textDiv">
       <div>
         <p class="title">{{ article.title }}</p>
+        <p>{{ article.content }}</p>
         <p class="date">
           Date:
           {{ article.publishedAt.replace("T", " Time: ").slice(0, -1) }}
         </p>
+        <p>{{ article.author }}</p>
       </div>
-      <p>{{ article.description }}</p>
-      <button class="btn btn-link" routerLink="/article/{{ article.id }}">
-        Read more...
-      </button>
+      <div>
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
     </div>
   </div>
 </div>

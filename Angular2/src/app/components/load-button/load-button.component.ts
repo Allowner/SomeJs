@@ -401,7 +401,9 @@ export class LoadButtonComponent implements OnInit {
 
   @Output() onClick = new EventEmitter<NewsModel[]>();
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.onClick.emit(this.getArticles());
+  }
 
   getArticles() {
     var articles = this.allArticles.slice(
