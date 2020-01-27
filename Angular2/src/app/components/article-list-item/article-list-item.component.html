@@ -1,28 +1,23 @@
-<div class="news">
-  <div *ngFor="let article of articles">
-    <div class="mainMargin">
-      <div class="imgDiv">
-        <img
-          src="{{ article.urlToImage }}"
-          alt="description of"
-          width="120"
-          height="100"
-        />
-      </div>
-      <div class="textDiv">
-        <div>
-          <p class="title">{{ article.title }}</p>
-          <p class="date">
-            Date:
-            {{ article.publishedAt.replace("T", " Time: ").slice(0, -1) }}
-          </p>
-        </div>
-        <p>{{ article.description }}</p>
-        <button class="btn btn-link" routerLink="/article/{{ article.id }}">
-          Read more...
-        </button>
-      </div>
-    </div>
+<div class="mainMargin">
+  <div class="imgDiv">
+    <img
+      src="{{ article.urlToImage }}"
+      alt="description of"
+      width="120"
+      height="100"
+    />
   </div>
-  <app-load-button></app-load-button>
+  <div class="textDiv">
+    <div>
+      <p class="title">{{ article.title }}</p>
+      <p class="date">
+        Date:
+        {{ article.publishedAt.replace("T", " Time: ").slice(0, -1) }}
+      </p>
+    </div>
+    <p>{{ article.description }}</p>
+    <button class="btn btn-link" routerLink="/article/{{ article.id }}">
+      Read more...
+    </button>
+  </div>
 </div>

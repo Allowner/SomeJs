@@ -1,17 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
-
-export interface MyModel {
-  id: number;
-  createdByMe: boolean;
-  source: { id: string; name: string };
-  author: string;
-  title: string;
-  description: string;
-  url: string;
-  urlToImage: string;
-  publishedAt: string;
-  content: string;
-}
+import { NewsModel } from "app/model/newsModel";
 
 @Component({
   selector: "app-load-button",
@@ -411,7 +399,7 @@ export class LoadButtonComponent implements OnInit {
   current = 0;
   constructor() {}
 
-  @Output() onClick = new EventEmitter<MyModel>();
+  @Output() onClick = new EventEmitter<NewsModel[]>();
 
   ngOnInit() {}
 
@@ -422,6 +410,8 @@ export class LoadButtonComponent implements OnInit {
     );
     this.current += this.amount;
 
+    console.log(this.current);
+    console.log(articles);
     return articles;
   }
 }
