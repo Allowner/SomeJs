@@ -1,0 +1,16 @@
+.saveButton {
+  margin-top: 20px;
+  width: 100px;
+}
+
+.cancelButton {
+  margin-top: 20px;
+  float: right;
+  width: 100px;
+}
+
+.formDiv {
+  width: 800px;
+  border: 4px;
+  margin: 0 auto;
+}

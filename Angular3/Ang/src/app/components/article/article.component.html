@@ -1,0 +1,26 @@
+<div class="news">
+  <div class="mainMargin">
+    <div class="imgDiv">
+      <img
+        src="{{ article.urlToImage }}"
+        alt="description of"
+        width="400"
+        height="240"
+      />
+    </div>
+    <div class="textDiv">
+      <div>
+        <p class="title">{{ article.title }}</p>
+        <p>{{ article.content }}</p>
+        <p class="date">
+          {{ article.publishedAt | customDate }}
+        </p>
+        <p>{{ article.author }}</p>
+      </div>
+      <div>
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

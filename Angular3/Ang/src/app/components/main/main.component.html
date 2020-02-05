@@ -1,0 +1,77 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <div style="text-align: center;">
+    <h3 class="sourceName">SourceName</h3>
+  </div>
+  <div>
+    <div class="dropdown dropdownStyle">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenu2"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        All sources
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button
+          class="dropdown-item"
+          type="button"
+          (click)="changeSource('My news')"
+        >
+          My news
+        </button>
+        <button
+          class="dropdown-item"
+          type="button"
+          (click)="changeSource('Bloomberg')"
+        >
+          Bloomberg
+        </button>
+        <button
+          class="dropdown-item"
+          type="button"
+          (click)="changeSource('CNN')"
+        >
+          CNN
+        </button>
+        <button
+          class="dropdown-item"
+          type="button"
+          (click)="changeSource('Bild')"
+        >
+          Bild
+        </button>
+      </div>
+    </div>
+    <div class="searchStyle">
+      <form class="form-inline" (submit)="onSubmit()">
+        <input
+          class="form-control mr-sm-2 formMargin"
+          type="search"
+          placeholder="Type your text..."
+          aria-label="Search"
+          [(ngModel)]="search"
+          name="search"
+          #name="ngModel"
+        />
+        <button class="btn btn-primary" style="width: 100px;" type="submit">
+          Filter
+        </button>
+      </form>
+    </div>
+    <div class="check">
+      <input type="checkbox" name="showMy" value="value" />Only created by me
+    </div>
+    <button class="btn btn-primary addButton" routerLink="/create">
+      Add article
+    </button>
+  </div>
+</div>
+<div class="news">
+  <ng-template direct></ng-template>
+  <app-load-button (onClick)="addItems($event)"></app-load-button>
+</div>
+<app-footer></app-footer>

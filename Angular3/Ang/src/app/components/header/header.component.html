@@ -1,0 +1,28 @@
+<div>
+  <div>
+    <a class="navbar-brand" style="margin-left: 7%;" routerLink="/home">
+      <span style="margin-left: 10px;">Aggregator logo</span>
+    </a>
+    <div class="login">
+      <span>
+        <span>{{ login }}</span>
+        <button
+          class="btn btn-link"
+          *ngIf="login != ''"
+          style="margin-left: 40px;"
+          (click)="logOut()"
+        >
+          Log out
+        </button>
+        <button
+          class="btn btn-link"
+          *ngIf="login == ''"
+          style="margin-left: 40px;"
+          (click)="logIn()"
+        >
+          Log in
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
