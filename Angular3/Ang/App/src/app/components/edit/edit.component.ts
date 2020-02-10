@@ -79,8 +79,6 @@ export class EditComponent implements OnInit {
         .updateNews(this.userFormGroup.value)
         .subscribe(c => this.navigateToMain());
     } else {
-      alert(JSON.stringify(this.userFormGroup.value));
-      console.log(JSON.stringify(this.userFormGroup.value));
       this.newsService
         .addNews(this.userFormGroup.value)
         .subscribe(c => this.navigateToMain());

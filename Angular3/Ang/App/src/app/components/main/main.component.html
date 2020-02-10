@@ -1,7 +1,7 @@
 <div class="wrapper">
   <app-header></app-header>
   <div style="text-align: center;">
-    <h3 class="sourceName">SourceName</h3>
+    <h3 class="sourceName">All sources</h3>
   </div>
   <div>
     <div class="dropdown dropdownStyle">
@@ -16,13 +16,6 @@
         All sources
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <button
-          class="dropdown-item"
-          type="button"
-          (click)="changeSource('My news')"
-        >
-          My news
-        </button>
         <button
           class="dropdown-item"
           type="button"
@@ -47,15 +40,12 @@
       </div>
     </div>
     <div class="searchStyle">
-      <form class="form-inline" (submit)="onSubmit()">
+      <form class="form-inline" (submit)="onSubmit(inp.value)">
         <input
           class="form-control mr-sm-2 formMargin"
           type="search"
           placeholder="Type your text..."
-          aria-label="Search"
-          [(ngModel)]="search"
-          name="search"
-          #name="ngModel"
+          #inp
         />
         <button class="btn btn-primary" style="width: 100px;" type="submit">
           Filter

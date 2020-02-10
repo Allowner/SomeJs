@@ -5,7 +5,8 @@ import {
   ComponentFactoryResolver,
   ComponentRef,
   ComponentFactory,
-  OnInit
+  OnInit,
+  Input
 } from "@angular/core";
 import { News } from "src/app/model/newsModel";
 import { ArticleListItemComponent } from "../article-list-item/article-list-item.component";
@@ -18,6 +19,8 @@ import { MyDirective } from "../directive";
 })
 export class MainComponent implements OnInit {
   articles = [];
+  filtered = [];
+  filterApplied = false;
   @ViewChild(MyDirective, { static: true })
   directive: MyDirective;
 
@@ -31,9 +34,16 @@ export class MainComponent implements OnInit {
     );
     const viewContainerRef = this.directive.viewContainerRef;
     viewContainerRef.clear();
-    for (let i = 0; i < this.articles.length; i++) {
-      const componentRef = viewContainerRef.createComponent(componentFactory);
-      componentRef.instance.article = this.articles[i];
+    if (this.filterApplied) {
+      for (let i = 0; i < this.filtered.length; i++) {
+        const componentRef = viewContainerRef.createComponent(componentFactory);
+        componentRef.instance.article = this.filtered[i];
+      }
+    } else {
+      for (let i = 0; i < this.articles.length; i++) {
+        const componentRef = viewContainerRef.createComponent(componentFactory);
+        componentRef.instance.article = this.articles[i];
+      }
     }
   }
 
@@ -44,5 +54,17 @@ export class MainComponent implements OnInit {
   addItems(newItems: News[]) {
     this.articles = this.articles.concat(newItems);
     this.createComponents();
+  }
+
+  onSubmit(word: string) {
+    if (word !== "") {
+      this.filterApplied = true;
+      this.filtered = this.articles.filter(
+        obj => obj.content != null && obj.content.includes(word)
+      );
+      this.createComponents();
+    } else {
+      this.filterApplied = false;
+    }
   }
 }

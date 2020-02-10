@@ -2,7 +2,7 @@
   <div class="imgDiv">
     <img
       src="{{ article.urlToImage }}"
-      alt="description of"
+      alt="no image"
       width="150"
       height="100"
     />
@@ -19,5 +19,9 @@
     <button class="btn btn-link" routerLink="/article/{{ article.id }}">
       Read more...
     </button>
+    <div *ngIf="article.source.name === 'me'">
+      <button class="btn btn-primary" (click)="edit()">Edit</button>
+      <button class="btn btn-danger delButton" (click)="delete()">Delete</button>
+    </div>
   </div>
 </div>

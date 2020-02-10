@@ -9,6 +9,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class NewsService {
   private url = "http://localhost:3000/news";
+  private source;
 
   constructor(private http: HttpClient) {}
 
