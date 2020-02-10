@@ -17,6 +17,7 @@ import { CustomDatePipe } from "./model/pipe";
 import { AlertModule } from "ngx-bootstrap";
 import { MatSelectModule } from "@angular/material/select";
 import { MyDirective } from "./components/directive";
+import { ImagePipe } from "./model/imgPipe";
 
 const routes: Routes = [
   { path: "", component: MainComponent, pathMatch: "full" },
@@ -46,6 +47,7 @@ const routes: Routes = [
     ArticleListItemComponent,
     ArticleComponent,
     CustomDatePipe,
+    ImagePipe,
     LoadButtonComponent,
     MyDirective
   ],

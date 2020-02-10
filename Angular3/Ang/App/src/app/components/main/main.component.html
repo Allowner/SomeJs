@@ -17,6 +17,7 @@
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
         <button
+          id="btn1"
           class="dropdown-item"
           type="button"
           (click)="changeSource('Bloomberg')"
@@ -53,7 +54,12 @@
       </form>
     </div>
     <div class="check">
-      <input type="checkbox" name="showMy" value="value" />Only created by me
+      <input
+        type="checkbox"
+        name="showMy"
+        value="value"
+        (click)="filterMy()"
+      />Only created by me
     </div>
     <button class="btn btn-primary addButton" routerLink="/create">
       Add article
@@ -62,6 +68,6 @@
 </div>
 <div class="news">
   <ng-template direct></ng-template>
-  <app-load-button (onClick)="addItems($event)"></app-load-button>
+  <app-load-button id="load" (onClick)="addItems($event)"></app-load-button>
 </div>
 <app-footer></app-footer>

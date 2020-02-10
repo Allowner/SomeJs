@@ -11,6 +11,8 @@ import {
 import { News } from "src/app/model/newsModel";
 import { ArticleListItemComponent } from "../article-list-item/article-list-item.component";
 import { MyDirective } from "../directive";
+import { NewsService } from "src/app/services/newsService";
+import { LoadButtonComponent } from "../load-button/load-button.component";
 
 @Component({
   selector: "app-main",
@@ -21,12 +23,18 @@ export class MainComponent implements OnInit {
   articles = [];
   filtered = [];
   filterApplied = false;
+  @ViewChild(LoadButtonComponent, { static: true }) child: LoadButtonComponent;
   @ViewChild(MyDirective, { static: true })
   directive: MyDirective;
 
-  constructor(private resolver: ComponentFactoryResolver) {}
+  constructor(
+    private resolver: ComponentFactoryResolver,
+    private newsService: NewsService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.child.getAr("Bild,Bloomberg,CNN");
+  }
 
   createComponents() {
     const componentFactory = this.resolver.resolveComponentFactory(
@@ -49,9 +57,11 @@ export class MainComponent implements OnInit {
 
   changeSource(text) {
     document.getElementsByClassName("sourceName")[0].innerHTML = text;
+    this.child.getAr(text);
   }
 
   addItems(newItems: News[]) {
+    console.log(newItems);
     this.articles = this.articles.concat(newItems);
     this.createComponents();
   }
