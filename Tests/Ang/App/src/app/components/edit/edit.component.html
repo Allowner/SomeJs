@@ -1,0 +1,90 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <div style="text-align: center;">
+    <h3 *ngIf="existed">Edit</h3>
+    <h3 *ngIf="!existed">Create</h3>
+  </div>
+  <form [formGroup]="userFormGroup" (ngSubmit)="onSubmit()">
+    <div class="formDiv">
+      <div style="width: 300px; float: left;">
+        <label for="title" id="titleLabel">Heading</label><br />
+        <input
+          type="textbox"
+          id="title"
+          aria-describedby="titleLabel"
+          name="title"
+          [formControl]="titleControl"
+          style="width: 300px;"
+        /><br />
+        <label for="description" id="descriptionLabel">Short description</label
+        ><br />
+        <input
+          type="textbox"
+          id="description"
+          aria-describedby="descriptionLabel"
+          name="description"
+          [formControl]="descriptionControl"
+          style="width: 300px;"
+        /><br />
+        <label for="content" id="contentLabel">Content</label>
+        <textarea
+          id="content"
+          aria-describedby="contentLabel"
+          name="content"
+          [formControl]="contentControl"
+          rows="6"
+          cols="39"
+        ></textarea>
+      </div>
+      <div style="width:300px; float: right;">
+        <label for="urlToImage" id="urlToImageLabel">Image</label><br />
+        <input
+          type="textbox"
+          id="urlToImage"
+          aria-describedby="urlToImageLabel"
+          name="urlToImage"
+          [formControl]="urlToImageControl"
+          style="width: 300px;"
+        /><br />
+        <label for="publishedAt" id="publishedAtLabel">Date</label><br />
+        <input
+          type="textbox"
+          id="publishedAt"
+          aria-describedby="publishedAtLabel"
+          name="publishedAt"
+          [formControl]="publishedAtControl"
+          style="width: 300px;"
+        /><br />
+        <label for="author" id="authorLabel">Author</label><br />
+        <input
+          type="textbox"
+          id="author"
+          aria-describedby="authorLabel"
+          name="author"
+          [formControl]="authorControl"
+          style="width: 300px;"
+        /><br />
+        <label for="url" id="urlLabel">Source url</label><br />
+        <input
+          type="textbox"
+          id="url"
+          aria-describedby="urlLabel"
+          name="url"
+          [formControl]="urlControl"
+          style="width: 300px;"
+        /><br />
+        <button
+          type="submit"
+          class="btn btn-primary saveButton"
+          [disabled]="!userFormGroup.valid"
+        >
+          Save
+        </button>
+        <button class="btn btn-danger cancelButton" routerLink="">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>

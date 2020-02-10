@@ -1,0 +1,25 @@
+.news {
+  margin-top: 5%;
+  height: 500px;
+  overflow: auto;
+}
+
+.mainMargin {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+  height: 200px;
+  border: 2px black;
+}
+
+.textDiv {
+  float: left;
+  margin-left: 2%;
+  padding-bottom: 2%;
+  min-height: 100;
+}
+
+.delButton {
+  margin-left: 20px;
+}
