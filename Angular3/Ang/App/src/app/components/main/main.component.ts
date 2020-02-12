@@ -23,16 +23,16 @@ export class MainComponent implements OnInit {
   articles = [];
   filtered = [];
   filterApplied = false;
+  onlyMy = false;
+  prevSource = "";
   @ViewChild(LoadButtonComponent, { static: true }) child: LoadButtonComponent;
   @ViewChild(MyDirective, { static: true })
   directive: MyDirective;
 
-  constructor(
-    private resolver: ComponentFactoryResolver,
-    private newsService: NewsService
-  ) {}
+  constructor(private resolver: ComponentFactoryResolver) {}
 
   ngOnInit() {
+    this.prevSource = "All sources";
     this.child.getAr("Bild,Bloomberg,CNN");
   }
 
@@ -56,14 +56,46 @@ export class MainComponent implements OnInit {
   }
 
   changeSource(text) {
+    this.articles = [];
     document.getElementsByClassName("sourceName")[0].innerHTML = text;
+    this.prevSource = text;
     this.child.getAr(text);
+  }
+
+  filterMy() {
+    this.articles = [];
+    this.onlyMy = !this.onlyMy;
+
+    if (this.onlyMy == true) {
+      document.getElementsByClassName("sourceName")[0].innerHTML = "My news";
+      this.child.getAr("me");
+      (<HTMLInputElement>(
+        document.getElementById("dropdownMenu2")
+      )).disabled = true;
+    } else {
+      if (this.prevSource === "All sources") {
+        this.child.getAr("Bild,Bloomberg,CNN");
+      } else {
+        this.child.getAr(this.prevSource);
+      }
+      document.getElementsByClassName(
+        "sourceName"
+      )[0].innerHTML = this.prevSource;
+      (<HTMLInputElement>(
+        document.getElementById("dropdownMenu2")
+      )).disabled = false;
+    }
   }
 
   addItems(newItems: News[]) {
     console.log(newItems);
     this.articles = this.articles.concat(newItems);
     this.createComponents();
+  }
+
+  onChanged(logedIn) {
+    console.log(logedIn);
+    (<HTMLInputElement>document.getElementById("chB1")).disabled = !logedIn;
   }
 
   onSubmit(word: string) {
@@ -75,6 +107,7 @@ export class MainComponent implements OnInit {
       this.createComponents();
     } else {
       this.filterApplied = false;
+      this.createComponents();
     }
   }
 }

@@ -29,6 +29,8 @@ export class ArticleListItemComponent implements OnInit {
   }
 
   delete() {
-    this.newsService.deleteNews(this.article.id);
+    this.newsService.deleteNews(this.article.id).subscribe(response => {
+      console.log("deleted");
+    });
   }
 }

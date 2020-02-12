@@ -86,7 +86,9 @@ export class EditComponent implements OnInit {
   }
 
   onDelete() {
-    this.newsService.deleteNews(this.model.id);
+    this.newsService.deleteNews(this.model.id).subscribe(response => {
+      console.log("deleted");
+    });
   }
 
   navigateToMain() {

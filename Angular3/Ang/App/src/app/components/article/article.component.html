@@ -20,7 +20,7 @@
         </p>
         <p>{{ article.author }}</p>
       </div>
-      <div *ngIf="article.source.name === 'me'">
+      <div *ngIf="article.source.name == 'me'">
         <button class="btn btn-primary">Edit</button>
         <button class="btn btn-danger delButton">Delete</button>
       </div>

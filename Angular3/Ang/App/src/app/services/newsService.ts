@@ -31,6 +31,7 @@ export class NewsService {
   }
 
   deleteNews(id: number): Observable<News> {
+    console.log(id);
     return this.http.delete<News>(`${this.url}/${id}`);
   }
 }
