@@ -3,6 +3,7 @@ import { News } from "src/app/model/newsModel";
 import { NewsService } from "src/app/services/newsService";
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormControl, Validators, FormGroup } from "@angular/forms";
+import { forbiddenNameValidator } from "src/app/model/validator";
 
 @Component({
   selector: "app-edit",
@@ -21,15 +22,20 @@ export class EditComponent implements OnInit {
     Validators.required
   ]);
   public urlToImageControl: FormControl = new FormControl("", [
-    Validators.required
+    Validators.required,
+    Validators.pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?")
   ]);
   public publishedAtControl: FormControl = new FormControl("", [
     Validators.required
   ]);
   public authorControl: FormControl = new FormControl("", [
-    Validators.required
+    Validators.required,
+    forbiddenNameValidator(/evil/i)
   ]);
-  public urlControl: FormControl = new FormControl("", [Validators.required]);
+  public urlControl: FormControl = new FormControl("", [
+    Validators.required,
+    Validators.pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?")
+  ]);
   public userFormGroup: FormGroup = new FormGroup({
     id: this.idControl,
     source: this.sourceControl,

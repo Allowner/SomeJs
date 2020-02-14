@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule, Directive } from "@angular/core";
+import { NgModule, Injector, Directive } from "@angular/core";
+import { createCustomElement } from "@angular/elements";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from "./app.component";

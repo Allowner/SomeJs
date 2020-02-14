@@ -102,7 +102,9 @@ export class MainComponent implements OnInit {
     if (word !== "") {
       this.filterApplied = true;
       this.filtered = this.articles.filter(
-        obj => obj.content != null && obj.content.includes(word)
+        obj =>
+          (obj.content != null && obj.content.includes(word)) ||
+          (obj.description != null && obj.description.includes(word))
       );
       this.createComponents();
     } else {

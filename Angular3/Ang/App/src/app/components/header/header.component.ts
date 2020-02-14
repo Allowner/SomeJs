@@ -10,15 +10,21 @@ export class HeaderComponent implements OnInit {
   @Output() onChanged = new EventEmitter<boolean>();
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (localStorage.length != 0) {
+      this.login = localStorage.getItem("login");
+    }
+  }
 
   logIn() {
     this.login = "Seva";
+    localStorage.setItem("login", "Seva");
     this.onChanged.emit(true);
   }
 
   logOut() {
     this.login = "";
+    localStorage.clear();
     this.onChanged.emit(false);
   }
 }
